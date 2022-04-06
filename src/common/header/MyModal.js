@@ -16,17 +16,20 @@ const style = {
   p: 4,
 };
 
+
+
 export default function MyModal() {
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+
+const [open, setOpen] = React.useState(false);
+const handleOpenMyModal = () => setOpen(true);
+const handleCloseMyModal = () => setOpen(false);
 
   return (
     <div>
-      {/* <Button onClick={handleOpen}>Open modal</Button> */}
+      {/* <Button onClick={handleOpenMyModal}>Open modal</Button> */}
       <Modal
         open={open}
-        onClose={handleClose}
+        onClose={handleCloseMyModal}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
