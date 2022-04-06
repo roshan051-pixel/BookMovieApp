@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Header.css';
 import MyLogo from '../../assets/logo.svg';
 import { Button } from '@material-ui/core';
-import MyVerticallyCenteredModal from './MyModal';
+import MyModal from './MyModal';
 
 const Header = function (props) {
     const [modalShow, setModalShow] = React.useState(false);
@@ -11,12 +11,12 @@ const Header = function (props) {
             <div className="logo">
                 <img src={MyLogo} alt="React Logo" width='35px'/>
             </div>
-            <div align='right' vertical-align='top'>
-                <Button variant="contained" color='default' onClick={() => setModalShow(true)}>Login</Button>
-                <Button variant="contained" color='default'>Logout</Button>
-                <Button variant="contained" color='primary'>Book Show</Button>
+            <div className="topcorner">
+                <Button variant="contained" color='primary'>Book Show</Button>&nbsp;
+                <Button variant="contained" color='default' onClick={() => setModalShow(true)}>Login</Button>&nbsp; 
+                <Button variant="contained" color='default'>Logout</Button>&nbsp;
 
-                <MyVerticallyCenteredModal show={modalShow}
+                <MyModal show={modalShow}
                     onHide={() => setModalShow(false)}
                 />
             </div>
