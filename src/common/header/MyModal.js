@@ -20,9 +20,9 @@ const style = {
 
 export default function MyModal() {
 
-const [open, setOpen] = React.useState(false);
-const handleOpenMyModal = () => setOpen(true);
-const handleCloseMyModal = () => setOpen(false);
+  const [open, setOpen] = React.useState(false);
+  const handleOpenMyModal = () => setOpen(true);
+  const handleCloseMyModal = () => setOpen(false);
 
   return (
     <div>
