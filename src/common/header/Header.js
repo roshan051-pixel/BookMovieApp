@@ -9,6 +9,7 @@ import Tab from '@material-ui/core/Tab';
 import { TextField } from '@material-ui/core';
 import { Typography } from '@material-ui/core';
 import TabPanel from "./tabPanel/TabPanel";
+import { Link } from "react-router-dom";
 
 const style = {
     position: 'absolute',
@@ -22,7 +23,7 @@ const style = {
     p: 16,
 };
 
-const Header = function (props) {
+const Header = ({ bookShow, bookShowId }) => {
     const handleOpenMyModal = () => setLoginOpen(true);
     const handleCloseMyModal = () => setLoginOpen(false);
     const [loginOpen, setLoginOpen] = useState(false);
@@ -54,7 +55,14 @@ const Header = function (props) {
                     <img src={MyLogo} alt="React Logo" width='35px' />
                 </div>
                 <div className="topcorner">
-                    <Button variant="contained" color='primary'>Book Show</Button>&nbsp;
+                    {bookShow ? (
+                        <Link
+                            to={"/book-show/" + bookShowId}
+                            style={{ textDecoration: "none" }}
+                        >
+                            <Button variant="contained" color='primary'>Book Show</Button>
+                        </Link>
+                    ) : null}
                     {login ?
                         (<Button variant="contained" color='default' onClick={handleOpenMyModal}>Login</Button>)
                         :
