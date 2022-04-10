@@ -3,8 +3,6 @@ import Header from '../../common/header/Header';
 import UpcomingMovieList from './UpcomingMovieList';
 import ReleasedMovieList from './ReleasedMovieList';
 import MovieFilterCard from './MovieFilterCard';
-import { Grid } from "@material-ui/core";
-import { Box } from "@material-ui/core";
 
 export default function Home () {
 

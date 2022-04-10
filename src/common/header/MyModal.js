@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Box from '@material-ui/core/Box';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Modal from '@material-ui/core/Modal';
 
@@ -20,16 +19,16 @@ const style = {
 
 export default function MyModal() {
 
-  const [open, setOpen] = React.useState(false);
-  const handleOpenMyModal = () => setOpen(true);
-  const handleCloseMyModal = () => setOpen(false);
+  //const [open, setOpen] = React.useState(false);
+  //const handleOpenMyModal = () => setOpen(true);
+  //const handleCloseMyModal = () => setOpen(false);
 
   return (
     <div>
       {/* <Button onClick={handleOpenMyModal}>Open modal</Button> */}
       <Modal
-        open={open}
-        onClose={handleCloseMyModal}
+        //open={open}
+        //onClose={handleCloseMyModal}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >

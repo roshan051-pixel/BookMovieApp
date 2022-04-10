@@ -31,9 +31,7 @@ const Header = ({ bookShow, bookShowId }) => {
     const [login, setLogin] = useState(true);
     const [success, setSuccess] = useState(false);
 
-    const loginHandler = () => {
-        setLoginOpen(true);
-    };
+
 
     const handleChange = (event, newValue) => {
         setValue(newValue);

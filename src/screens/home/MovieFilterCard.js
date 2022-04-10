@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { makeStyles } from "@material-ui/core/styles";
-import { ThemeProvider, createTheme } from '@material-ui/core/styles';
-import ListItemText from '@material-ui/core/ListItemText';
+//import { makeStyles } from "@material-ui/core/styles";
+//import { createTheme } from '@material-ui/core/styles';
 import {
     Card,
     CardContent,
@@ -14,8 +13,6 @@ import {
     Input,
     Checkbox,
     Button,
-    CardHeader,
-    Box
 } from "@material-ui/core";
 
 const ITEM_HEIGHT = 48;
@@ -29,67 +26,67 @@ const MenuProps = {
     },
 };
 
-const useStyles = makeStyles(theme => ({
-    root: {
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center"
-    },
-    form: {
-        width: 800,
-        display: "flex"
-    },
-    container: {
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center"
-    },
-    text: {
-        minWidth: 240
-    },
-    type: {
-        fontWeight: 600
-    },
-    formControl: {
-        marginRight: theme.spacing(1),
-        [theme.breakpoints.down("xs")]: {
-            minWidth: "100%",
-            marginRight: theme.spacing(0),
-            marginBottom: theme.spacing(1)
-        }
-    },
-    input: {
-        padding: "10px 14px"
-    },
-    select: {
-        maxWidth: 240
-    },
-    search: {
-        maxWidth: 180
-    },
-    submitBtn: {
-        [theme.breakpoints.down("xs")]: {
-            width: "100%"
-        }
-    },
-    textField: {
-        marginLeft: theme.spacing(1),
-        marginRight: theme.spacing(1),
-        width: 200,
-    },
-}));
+// const useStyles = makeStyles(theme => ({
+//     root: {
+//         display: "flex",
+//         justifyContent: "center",
+//         alignItems: "center"
+//     },
+//     form: {
+//         width: 800,
+//         display: "flex"
+//     },
+//     container: {
+//         display: "flex",
+//         justifyContent: "center",
+//         alignItems: "center"
+//     },
+//     text: {
+//         minWidth: 240
+//     },
+//     type: {
+//         fontWeight: 600
+//     },
+//     formControl: {
+//         marginRight: theme.spacing(1),
+//         [theme.breakpoints.down("xs")]: {
+//             minWidth: "100%",
+//             marginRight: theme.spacing(0),
+//             marginBottom: theme.spacing(1)
+//         }
+//     },
+//     input: {
+//         padding: "10px 14px"
+//     },
+//     select: {
+//         maxWidth: 240
+//     },
+//     search: {
+//         maxWidth: 180
+//     },
+//     submitBtn: {
+//         [theme.breakpoints.down("xs")]: {
+//             width: "100%"
+//         }
+//     },
+//     textField: {
+//         marginLeft: theme.spacing(1),
+//         marginRight: theme.spacing(1),
+//         width: 200,
+//     },
+// }));
 
 function MovieFilterCard() {
 
-    const [data, setData] = useState([]);
+    //const [data, setData] = useState([]);
     const [genres, setGenres] = useState([]);
     const [genreChoice, setGenreChoice] = useState([]);
-    const [checked, setChecked] = useState(false);
+    //const [checked, setChecked] = useState(false);
     const [artists, setArtists] = useState([]);
     const [artistChoice, setArtistChoice] = useState([]);
 
 
-    const classes = useStyles();
+    //const classes = useStyles();
 
     useEffect(() => {
 
@@ -193,34 +190,34 @@ function MovieFilterCard() {
     );
 }
 
-const theme = createTheme({
-    palette: {
-        primary: {
-            light: '#757de8',
-            main: '#757de8',
-            dark: '#757de8',
-            contrastText: '#fff',
-        }
-    },
-});
+// const theme = createTheme({
+//     palette: {
+//         primary: {
+//             light: '#757de8',
+//             main: '#757de8',
+//             dark: '#757de8',
+//             contrastText: '#fff',
+//         }
+//     },
+// });
 
-const GenresList = [
-    'Action',
-    'Comedy',
-    'Drama',
-];
+// const GenresList = [
+//     'Action',
+//     'Comedy',
+//     'Drama',
+// ];
 
-const ArtistList = [
-    { first_name: 'Johnny', last_name: 'Depp' },
-    { first_name: 'Al', last_name: 'Pacino' },
-    { first_name: 'Robert', last_name: 'Niro' },
-    { first_name: 'Kevin', last_name: 'Spacey' },
-    { first_name: 'Denzel', last_name: 'Washington' },
-    { first_name: 'Russell', last_name: 'Crowe' },
-    { first_name: 'Brad', last_name: 'Pitt' },
-    { first_name: 'Angelina', last_name: 'Jolie' },
-    { first_name: 'Leonardo', last_name: 'DiCaprio' },
-    { first_name: 'Tom', last_name: 'Cruise' },
-];
+// const ArtistList = [
+//     { first_name: 'Johnny', last_name: 'Depp' },
+//     { first_name: 'Al', last_name: 'Pacino' },
+//     { first_name: 'Robert', last_name: 'Niro' },
+//     { first_name: 'Kevin', last_name: 'Spacey' },
+//     { first_name: 'Denzel', last_name: 'Washington' },
+//     { first_name: 'Russell', last_name: 'Crowe' },
+//     { first_name: 'Brad', last_name: 'Pitt' },
+//     { first_name: 'Angelina', last_name: 'Jolie' },
+//     { first_name: 'Leonardo', last_name: 'DiCaprio' },
+//     { first_name: 'Tom', last_name: 'Cruise' },
+// ];
 
 export default MovieFilterCard;

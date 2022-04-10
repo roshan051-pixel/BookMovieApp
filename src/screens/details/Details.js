@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import Header from "../../common/header/Header";
 import { makeStyles } from "@material-ui/styles";
 import { Link, useParams } from "react-router-dom";
-import axios from "axios";
-import { Typography, Button } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 import YouTube from "react-youtube";
 import StarBorderIcon from "@material-ui/icons/StarBorder";
 import GridList from "@material-ui/core/GridList";
@@ -11,6 +10,7 @@ import GridListTile from "@material-ui/core/GridListTile";
 import GridListTileBar from "@material-ui/core/GridListTileBar";
 import "./Details.css";
 import { Fragment } from "react";
+import axios from "axios";
 
 const Details = () => {
   let { id } = useParams();
@@ -18,7 +18,7 @@ const Details = () => {
   let [genres, setGenres] = useState([]);
   let [youtubeUrl, setYouttubeUrl] = useState("");
   let [actors, setActors] = useState([]);
-  let [rating, setRating] = useState(false);
+  //let [rating, setRating] = useState(false);
 
   useEffect(() => {
     axios

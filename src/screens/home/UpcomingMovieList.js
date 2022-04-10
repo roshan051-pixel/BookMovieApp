@@ -1,5 +1,5 @@
 import * as React from 'react';
-import poster_url from "./upcomingmovie.json";
+//import poster_url from "./upcomingmovie.json";
 import { useEffect, useState } from "react";
 import {
   ImageList,
@@ -20,9 +20,9 @@ export default function UpcomingMovieList() {
 
   return (
     <ImageList rowHeight={250} cols={8} style={{ width: 1720, height: 250 }}>
-      {poster_url.map((data) => (
+      {movieList.map((data) => (
         <ImageListItem key={data.id}>
-          <img src={data.image} alt={data.title} />
+          <img src={data.poster_url} alt={data.title} />
           <ImageListItemBar
             title={data.title}
           />
