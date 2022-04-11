@@ -55,7 +55,7 @@ const Header = ({ bookShow, bookShowId }) => {
                 <div className="topcorner">
                     {bookShow ? (
                         <Link
-                            to={"/book-show/" + bookShowId}
+                            to={"/bookshow/" + bookShowId}
                             style={{ textDecoration: "none" }}
                         >
                             <Button variant="contained" color='primary'>Book Show</Button>

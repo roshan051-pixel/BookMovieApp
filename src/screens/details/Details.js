@@ -5,12 +5,13 @@ import { Link, useParams } from "react-router-dom";
 import { Typography } from "@material-ui/core";
 import YouTube from "react-youtube";
 import StarBorderIcon from "@material-ui/icons/StarBorder";
-import GridList from "@material-ui/core/GridList";
-import GridListTile from "@material-ui/core/GridListTile";
-import GridListTileBar from "@material-ui/core/GridListTileBar";
+import ImageList from "@material-ui/core/ImageList";
+import ImageListItem from "@material-ui/core/ImageListItem";
+import ImageListItemBar from "@material-ui/core/ImageListItemBar";
 import "./Details.css";
 import { Fragment } from "react";
 import axios from "axios";
+import { Rating } from "@material-ui/lab";
 
 const Details = () => {
   let { id } = useParams();
@@ -50,6 +51,9 @@ const Details = () => {
     icon: {
       color: "rgba(255, 255, 255, 0.54)",
     },
+    emptyStar: {
+      color: "black"
+    }
   });
 
   var releaseDate = new Date(movieData.release_date).toDateString();
@@ -69,7 +73,7 @@ const Details = () => {
 
   return (
     <Fragment>
-      <Header bookShow={true} bookShowId="2" />
+      <Header bookShow={true} bookShowId={id} />
       <div className="details-content">
         <Typography style={{ margin: "10px" }}>
           <Link to="/" className="back-link">
@@ -77,11 +81,11 @@ const Details = () => {
           </Link>
         </Typography>
         <div className="main-content">
-         
+
           <div className="first-container">
             <img src={movieData.poster_url} alt={movieData.title} />
           </div>
-          
+
           <div className="mid-container">
             <Typography variant="h2" component="h2">
               {movieData.title}
@@ -130,35 +134,36 @@ const Details = () => {
               />
             </Typography>
           </div>
-         
+
           <div className="last-container">
             <Typography variant="subtitle1" gutterBottom>
               <b>Rate this movie:</b>
               <div className="star-container">
-                <StarBorderIcon />
-                <StarBorderIcon />
-                <StarBorderIcon />
-                <StarBorderIcon />
-                <StarBorderIcon />
+                <Rating
+                  name="rating_icon"
+                  emptyIcon={
+                    <StarBorderIcon className={classes.emptyStar} />
+                  }
+                />
               </div>
               <div className="artist-heading">
                 <b>Artists: </b>
               </div>
               <div className={classes.root}>
-                <GridList cellHeight={180} className={classes.gridList}>
+                <ImageList rowHeight={180} className={classes.gridList}>
                   {actors ? (
                     actors.map((actor) => (
-                      <GridListTile key={actor.id}>
+                      <ImageListItem key={actor.id}>
                         <img src={actor.profile_url} alt={actor.first_name} />
-                        <GridListTileBar
+                        <ImageListItemBar
                           title={actor.first_name + " " + actor.last_name}
                         />
-                      </GridListTile>
+                      </ImageListItem>
                     ))
                   ) : (
                     <h6>No actor data available</h6>
                   )}
-                </GridList>
+                </ImageList>
               </div>
             </Typography>
           </div>
